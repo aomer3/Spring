@@ -1,0 +1,13 @@
+Setter Injection Notes
+
+How to do Setter Injection:
+1. Create the POJO
+2. Create the COnfiguration file
+3. Create a test class
+
+Can doing dependency injection in 3 ways in .xml config file:
+1. Value as element inside property tag
+2. Value as attribute inside property tag
+3. P schema 
+
+

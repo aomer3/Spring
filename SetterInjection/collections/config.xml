@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<!-- Dependency injection using a list -->
+	<bean name="hospital"
+		class="com.spring.SetterInjection.collections.Hospital">
+		<property name="name" value="General Hospital"></property>
+		<property name="departments">
+			<list>
+				<value>Emergency</value>
+				<value>Cardiology</value>
+				<value>Intensive Care Unit</value>
+				<value>Neurology</value>
+				<value>Oncology</value>
+				<value>Obstetrics and Gynecology</value>
+				<value>Dermatology</value>
+				<value>Ophthalmology</value>
+				<value>Physical Therapy</value>
+				<value>Internal Medicine</value>
+				<value>Psychiatry</value>
+				<value>Pharmacy</value>
+				<value>Radiology</value>
+				<value>Labatory</value>
+				<value>Medical Records</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Dependency injection using a set -->
+	<bean name="dealership"
+		class="com.spring.SetterInjection.collections.CarDealership">
+		<property name="name" value="Jack Smith Auto"></property>
+		<property name="models">
+			<set>
+				<value>BMW i7</value>
+				<value>BMW x8</value>
+				<value>Lexus IS</value>
+				<value>Acura TL</value>
+				<value>Honda Civic</value>
+				<value>Honda Civic</value>
+				<value>Honda Civic</value>
+				<value>Honda CRV</value>
+				<value>Toyota Avalon</value>
+				<value>Toyota Supra</value>
+			</set>
+		</property>
+	</bean>
+
+	<!-- Dependency injection using a map -->
+	<bean name="customer"
+		class="com.spring.SetterInjection.collections.Customer">
+		<property name="id" value="101"></property>
+		<property name="products">
+			<map>
+				<entry key="1009" value="The Hobbit" />
+				<entry key="1010" value="Hatchet" />
+				<entry key="1011" value="Life of Pi" />
+				<entry key="1012" value="Crime and Punishment" />
+				<entry key="1013" value="The Ring" />
+				<entry key="1014" value="Virus" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- Dependency injection using properties -->
+	<bean name="countryAndLangs"
+		class="com.spring.SetterInjection.collections.CountryAndLangs">
+		<property name="countryAndLangs">
+			<props>
+				<prop key="USA">English</prop>
+				<prop key="Canda">English</prop>
+				<prop key="Mexico">Spanish</prop>
+				<prop key="UK">English</prop>
+				<prop key="France">French</prop>
+				<prop key="Spain">Spanish</prop>
+				<prop key="Germany">German</prop>
+				<prop key="Russia">Russian</prop>
+				<prop key="Turkey">Turkish</prop>
+				<prop key="USA">English</prop>
+				<prop key="Iran">Persian</prop>
+				<prop key="Saudi Arabia">Arabic</prop>
+				<prop key="Somalia">Somali</prop>
+				<prop key="Ethiopia">Amharic</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Dependency injection with a referenced object  -->
+	
+	<!-- Must create both objects, always start with the dependent object creation -->
+	<bean name="scores" class="com.spring.SetterInjection.collections.Scores">
+		<property name="calculus" value="85"/>
+		<property name="physics" value="75"/>
+		<property name="chemistry" value="82"/>
+	</bean>
+	
+	<bean name="student" class="com.spring.SetterInjection.collections.Student">
+		<property name="name" value="Muhammad"/>
+		<property name="scores" ref="scores"/>
+	</bean>
+
+</beans>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<bean name="milk"
+		class="com.spring.SetterInjection.collections.assignment.Item">
+
+		<property name="id" value="1201" />
+		<property name="name" value="milk" />
+		<property name="price" value="3.50" />
+		<property name="quantity" value="2" />
+	</bean>
+
+	<bean name="water"
+		class="com.spring.SetterInjection.collections.assignment.Item">
+
+		<property name="id" value="1000" />
+		<property name="name" value="water" />
+		<property name="price" value="2.99" />
+		<property name="quantity" value="1" />
+	</bean>
+
+	<bean name="bananas"
+		class="com.spring.SetterInjection.collections.assignment.Item">
+
+		<property name="id" value="806" />
+		<property name="name" value="bananas" />
+		<property name="price" value="2.50" />
+		<property name="quantity" value="5" />
+	</bean>
+
+	<bean name="cereal"
+		class="com.spring.SetterInjection.collections.assignment.Item">
+
+		<property name="id" value="451" />
+		<property name="name" value="cereal" />
+		<property name="price" value="3.50" />
+		<property name="quantity" value="1" />
+	</bean>
+
+	<bean name="shrimp"
+		class="com.spring.SetterInjection.collections.assignment.Item">
+
+		<property name="id" value="1550" />
+		<property name="name" value="shrimp" />
+		<property name="price" value="19.99" />
+		<property name="quantity" value="1" />
+	</bean>
+
+	<bean name="bread"
+		class="com.spring.SetterInjection.collections.assignment.Item">
+
+		<property name="id" value="402" />
+		<property name="name" value="bread" />
+		<property name="price" value="2.99" />
+		<property name="quantity" value="2" />
+	</bean>
+
+	<bean name="shoppingCart"
+		class="com.spring.SetterInjection.collections.assignment.ShoppingCart">
+
+		<property name="milk" ref="milk" />
+		<property name="water" ref="water" />
+		<property name="bananas" ref="bananas" />
+		<property name="cereal" ref="cereal" />
+		<property name="shrimp" ref="shrimp" />
+		<property name="bread" ref="bread" />
+	</bean>
+
+</beans>
