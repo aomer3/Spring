@@ -1,0 +1,65 @@
+What is Spring
+1. Spring is a dependency injection framework
+2. Spring compliments the existing Java EE standards, by making them easier to use
+   Ex: Spring JDBC makes it easier to work with JDBC
+
+
+Dependency Injection 
+1. When one class depends on another class, through dependency injection, the Spring
+   framework will automatically inject the second class into the first class. 
+2. The process of moving the control of object creation from the application code to
+   an external framework (like Spring) is called Inversion of Control 
+3. Inversion Control is a design pattern that moves control from the code to a framework
+4. Two types of dependency injection
+	a. Constructor injection - preferred/more efficient injection, this is where we 
+           provide parameterized constructors (instead of setter and getter methods) then
+	   Spring uses the constructor to create and inject the object needed 
+	b. Setter injection - slower/less efficient than constructor injection, this is 
+  	   where we provide the setter and getter methods for the fields on our object, 
+	   and then Spring will use those setter methods to set the values for the objects
+	   then retrieve them with the getter methods
+
+Spring Container
+1. A Spring container is a predefined program that is responsible for creating the objects,
+   holding them in memory, and injecting them into other objects as required
+2. A container manages the complete lifecycle of an object from creation to destruction 
+3. A Spring container needs two things
+	a. Bean - Java classes in the application for which we need objects to be created
+	b. an XML configuration - tells the container what the dependencies are for an object
+4. ApplicationContext interface is the Spring container, and because it's an interface we 
+   cannot create instances of it
+5. The implementations of ApplicationContext are ClasspathXMLApplicationContext and    
+   AnnotationConfigApplicationContext, and FileSystemXMLContext
+	a. ClasspathXML... - will search for the XML configuration on the classpath
+	b. AnnotationConfig.. - configures the beans using annotations (instead of a XML file)
+	c. FilySystemXML.. - will search for the XML config file in the file system
+
+
+Dependency Injection with XML Configuration file
+1. Constructor injection
+	a. uses <constructor-arg value=""/> tag for each constructor parameter to create the 
+	   object 
+2. Setter injection	
+	a. uses <property name="" value=""/> tag for each field that needs to be set to create 
+	   the object
+
+
+Type of Data
+1. When Spring does dependency injection, it does so based on the data types the object 
+   depends on
+2. 3 types of data/dependencies
+	a. Primitive type - byte, short, long, int, boolean, double, float, char, string
+		1. primitive type can be injected using either constructor injection or setter 
+		   injection
+	b. Collection type - list, set, map, properties 
+	c. reference type - objects 
+
+3 Types of XML dependency injection 
+1. Value element as child of property element 
+2. Value attribute inside of the property element
+3. P schema inside bean element
+
+
+POM.xml file
+1. Spring core dependency and spring context depndecy are both required to be added to a 
+   project in order to do dependency injection 
