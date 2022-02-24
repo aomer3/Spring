@@ -1,0 +1,11 @@
+Bean Scopes
+1. A scope is the number of objects that can be created in the container of a particular 
+   bean 
+2. Scope types 
+	a. singleton - default scope. The container will only create one object, no matter 	
+           how many times it is used in the application 
+	b. prototype - the container will create new objects every time that it is used in 	           container
+	c. request - only relevant for Spring MVC Web applications. When a request comes in             from a user browser, the container will create a new object for each request
+	d. session - only relevant for Spring MVC Web applications. When a request comes in             from a user browser, the container will create one object for each session 
+	e. globalsession only relevant for SPring MVC portlets. The container will create 
+           only one object per global context that can be used by multiple portlets 
