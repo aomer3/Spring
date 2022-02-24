@@ -1,0 +1,17 @@
+Life cycle Methods
+
+Spring provides 2 life cycle methods to every bean it creates:
+1.public void init() 
+	a. used to add initialization code 
+	b. example: configuration file, database connection, web server connection
+2.public void destroy() 
+	a. closing resources, connections
+	b. example: closing connections 
+3. The init() and destory() methods can be called anything but must have the same 
+   method signature (i.e. public void and with no parameters)
+
+
+Life cycle methods can be configured in 3 ways:
+1. XML Configuration 
+2. Spring interfaces
+3. Annotations 
