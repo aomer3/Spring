@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	
+	<!-- Enable property placeholder to use bean externalization -->
+	<!-- This will link the application with the properties file -->
+	<context:property-placeholder location="com/spring/beanExternalization/database.properties"/>
+	
+	<!-- This will inject the properties in the properties file into the bean -->
+	<bean name="myDAO" class="com.spring.beanExternalization.MyDAO">
+		<constructor-arg value="${dbServer}"/>
+	</bean>
+
+</beans>

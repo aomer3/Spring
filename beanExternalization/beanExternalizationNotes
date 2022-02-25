@@ -1,0 +1,11 @@
+Bean Externalization (reading from properties file)
+1. Properties file is a global file that stores key-value pairs that can be referenced 
+   in the application 
+2. Properties file allows code (like connection properties) to be changed once, and not 
+   having to retype it everywhere in the application 
+
+
+3 Steps to reading properties file
+1. Create the properties file
+2. Link the properties 
+3. Inject the properties in xml config file
