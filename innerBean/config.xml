@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	
+	<!-- Enable all annotations -->		
+	<context:annotation-config/>
+	
+	<!-- Creating a bean using inner bean (alternative to referencing another bean) -->
+	<bean name="Employee" class="com.spring.innerBean.Employee">
+		<property name="id" value="932"/>
+		<property name="address">
+			<bean class="com.spring.innerBean.Address">
+				<property name="houseNo" value="818"/>
+				<property name="street" value="Leaf Ln"/>
+				<property name="city" value="New York City"/>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
