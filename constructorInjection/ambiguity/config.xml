@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	
+	<!-- Ambiguity problem - multiple constructors -->
+	<bean name="addition" class="com.spring.constructorInjection.ambiguity.Addition">
+		<constructor-arg value="10" type="int"/>
+		<constructor-arg value="20" type="int"/>
+	</bean>
+	
+	<!-- Ambiguity problem - incorrect order of parameters -->
+	<!-- To make sure the paramters are in the correct location, index can be used -->
+	<bean name="subtraction" class="com.spring.constructorInjection.ambiguity.Subtraction">
+		<constructor-arg value="20.3" type="double" index="1"/>
+		<constructor-arg value="10" type="int" index="0"/>
+	</bean>
+
+</beans>

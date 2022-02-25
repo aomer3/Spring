@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	
+	<bean name="address" class="com.spring.constructorInjection.elements.Address">
+		<constructor-arg>
+			<value>800</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>Orange Fields</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>Washington DC</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean name="Employee" class="com.spring.constructorInjection.elements.Employee">
+		<constructor-arg>
+			<value>967</value>
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="address"/>
+		</constructor-arg>	
+	</bean>
+
+</beans>

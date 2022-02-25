@@ -1,0 +1,17 @@
+Ambiguity Problem Notes
+
+1. When using constructor injection and using multiple viable constructors, Spring will 
+   invoke constructors depending on the order (even if it's not the right constructor)
+	a. example: when injecting two fields "10" and "20", Spring can either invoke a 
+	   constructor that takes two ints, or one that takes two doubles, or even two strings
+	   
+2. In this case, the highest priority constructor Spring will use is String, if that is 
+   available. If it is not available, then Spring will use the first viable constructor 
+   that will work with the given parameters. So if the double constructor comes first, it
+   will use that. And if the int constructor comes first, it will use that instead.
+   
+3. The ambiguity problem can be fixed by using any of the following in the constructor tag
+	a. type
+	b. index
+	c. name
+
