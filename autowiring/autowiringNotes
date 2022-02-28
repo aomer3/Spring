@@ -1,0 +1,32 @@
+Autowiring Notes
+1.The process of injecting a dependency with its dependeny object manually using the ref
+  keyword is called wiring
+2.The process of Spring doing injection of dependency to the dependent object automatically 
+  is called autowiring 
+
+Autowiring can be done in 2 ways
+1. XML (autowiring not done by default), can be done:
+	a. by type (setter injection)
+		1. If Spring finds the correct bean type, it will inject it automatically 
+		2. If Spring does not find any bean matching specified type, it will save the 
+		   field as null
+		3. If Spring finds multiple beans matching specified type, it will throw an 
+		   exception 
+	b. by name (setter injection)
+		1. If Spring finds the correct bean name, it will inject it automatically 
+		2. If Spring does not find any bean matching specified name, it will save the 
+		   field as null
+		3. If Spring finds multiple beans matching specified name, it will throw an 
+		   exception 
+	c. constructor (constructor injection)
+2. Annotations
+	a. done by using the @autowired keyword
+	b. along with @autowired, can also optionally use @qualifier
+	c. annotations can be placed on either:
+		a. field
+		b. constructor
+		c. setter method 
+	d. @Qualifier 
+		a. when there are multiple beans of same type and no one bean has the same name as
+		   the class variable name, it creates ambiguity and autowiring will not work
+		b. use @Qualifier to specify by name which bean to autowire

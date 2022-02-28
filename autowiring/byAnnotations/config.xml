@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	
+	<context:annotation-config/>
+	
+	<bean name="address1" class="com.spring.i.autowiring.byAnnotations.Address">
+		<constructor-arg value="900"/>
+		<constructor-arg value="Blade Rd"/>
+		<constructor-arg value="Los Angeles"/>
+	</bean>
+	
+	<bean name="address2" class="com.spring.i.autowiring.byAnnotations.Address">
+		<constructor-arg value="680"/>
+		<constructor-arg value="Red Ln"/>
+		<constructor-arg value="Los Angeles"/>
+	</bean>
+	
+	<!-- Instead of wiring address ourselves using property and ref, we can autowire it -->
+	<bean name="Employee" class="com.spring.i.autowiring.byAnnotations.Employee"/>
+
+</beans>
