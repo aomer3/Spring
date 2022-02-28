@@ -1,0 +1,10 @@
+XML Standalone Collections
+1. When using collections in xml config file, there are certain limitations
+	a. collections (list, set, map, properties) are local within one bean, cannot be 
+           used across multiple beans
+ 	b. collection types are set by default and cannot be changed (i.e. list will always
+           be made using ArrayList, set will be made using LinkedHashSet, etc.)
+2. Standalone collections solve both of these limitations 
+3. To use standalone collections, you need to use util schema 
+4. Once the standalone collection is made outside of the bean, then it can be used across 
+   multiple beans 
