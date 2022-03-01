@@ -1,0 +1,19 @@
+Interface Injection
+1. Instead of creating classes, it is better to create interfaces to create abstraction 
+   and make it easier to understand what the class is meant to do
+2. After creating interfaces, implementation classes then can be created to implement the 
+   the interfaces 
+3. There implementation classes can depend on each other and be injected as needed 
+
+Steps for injecting interfaces
+1. Create the POJIs/POJOs
+2. Create the configuration
+3. Create the test 
+
+
+Switching interface implementations
+1. By creating multiple implementations of a single interface, the application can quickly 
+   and easiy switch implementations of a given interface with minimal amount of code, and 
+   without changing the objects that are using that implementation (because they are all 
+   referencing the interface -- which will then check the xml config file to determine which
+   implementation it should use)
