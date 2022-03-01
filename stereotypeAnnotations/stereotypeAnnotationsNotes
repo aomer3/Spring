@@ -1,0 +1,26 @@
+Stereotype Annotations 
+-Stereotype Annotations are used to create objects
+
+2 Steps to creating and injecing objects using Stereotype annotations
+1. Use @Component (alternative to using <bean> tag)
+2. Enable component-scan in xml config file 
+3. Spring will automatically create a bean with the default name as the class (using 
+   camel-case). This can be changed by specifying another name in the @Component annotation
+
+Scope
+1. By default, the scope of any object is singleton 
+	a. singleton = multiple objects referring to the same bean will have the same memory allocation
+	b. this means one object is creating even if referenced many times 
+2. This can be changed by using @Scope and specifying a different scope
+	a. prototype = multiple objects referring to the same bean will have different memory allocations
+	b. this means a new object is created each time a bean is referenced 
+
+Value
+1. @Value will set a field to whatever is specified in the @Value annotation 
+2. Can be used with primitives, strings, collections, and objects
+3. For primitives and strings, can simply use @Value("") 
+4. When using it with collection, two steps involved 
+	a. create a standalone list in the xml config file 
+	b. use Spring Spring expression language to referenced created collection 
+	   @Value("#{referencedCollection}")
+5. For objects, can simply use @Autowired to inject one object into another 
