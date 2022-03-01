@@ -1,0 +1,19 @@
+Spring Expression Language Notes
+1. Spring Expression Language (SpEL) allows for parsing and executing expression, with 
+   the help of the @Value annotation 
+2. SpEL supports both primitive types and collections inside its expressions 
+3. An expression is a combination of classes, variables, methods, constructors and objects,
+   and symbols
+4. Symbols are characters, numberics, operators, keywords, and special symbols which return 
+   a value
+
+Examples of expressions: @Value("#{66+44}") is the same as @Value("110"),
+ 			 @Value("#{5>6?22:33}") is same as @Value("33")
+ 			 
+
+Static methods in @Value annotation
+1. Static methods can be used in @Value annotation like this (using static absolute method 
+   from Math class to make -99 into a positive number):  
+	a. @Value("#{T(java.lang.Math).abs(-99)}")
+
+
